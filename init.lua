@@ -151,16 +151,16 @@ require('lazy').setup({
       end,
     },
   },
-
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
+    "sainnhe/gruvbox-material",
+    priority = 10000,
+    lazy = false,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.g.gruvbox_material_foreground = "original"
+      vim.g.gruvbox_material_background = "medium"
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -168,7 +168,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'gruvbox',
         component_separators = '|',
         section_separators = '',
       },
@@ -240,7 +240,7 @@ require('lazy').setup({
 vim.o.hlsearch = false
 
 -- Make line numbers default
-vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
